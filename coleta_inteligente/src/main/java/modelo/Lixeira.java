@@ -1,12 +1,22 @@
 package modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Lixeira {
 	
+	@Id
+	@Column
 	private Long id;
+	@Column
 	private String latitude;
+	@Column
 	private String longitude;
+	@Column
 	private Double capacidade;
-	
+
 	public Long getId() {
 		return id;
 	}

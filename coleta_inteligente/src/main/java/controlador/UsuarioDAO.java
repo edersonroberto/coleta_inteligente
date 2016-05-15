@@ -19,7 +19,7 @@ public class UsuarioDAO {
 		
 		try{
 			
-			Query query = em.createQuery("Select u from Usuario u where u.nomeUsuario =: nome and u.senha =: senha");
+			Query query = em.createQuery("Select u from Usuario u where u.nomeUsuario =:nome and u.senha =:senha");
 			query.setParameter("nome", nomeUsuario);
 			query.setParameter("senha", senha);
 			usuario = (Usuario) query.getSingleResult();

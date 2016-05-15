@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -13,16 +15,17 @@ import javax.persistence.TemporalType;
 public class Usuario {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable=false, unique = true)
 	private long id;
 	
-	@Column(name="id", nullable=false, unique = true)
+	@Column(name="nome", nullable=false, unique = true)
 	private String nomeUsuario;
 	
-	@Column(name="id", nullable=false, unique = true)
+	@Column(name="senha", nullable=false)
 	private String senha;
 	
-	@Column(name="ultimo_acesso", unique=true)
+	@Column(name="ultimo_acesso")
     @Temporal(TemporalType.DATE)
     private Date ultimoAcesso;
 
