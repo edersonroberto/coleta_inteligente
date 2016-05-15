@@ -5,18 +5,19 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import controlador.UsuarioDAO;
 import modelo.Usuario;
 
 @ManagedBean(name = "LoginMB")
 @ViewScoped
 public class LoginManagedBean {
 	
-	//private UsuarioDAO usuarioDAO = new UsuarioDAO();
+	private UsuarioDAO usuarioDAO = new UsuarioDAO();
     private Usuario usuario = new Usuario();
     
     public String envia() {
           
-          //usuario = usuarioDAO.getUsuario(usuario.getNomeUsuario(), usuario.getSenha());
+         usuario = usuarioDAO.getUsuario(usuario.getNomeUsuario(), usuario.getSenha());
           
     	if (usuario == null) {
                 usuario = new Usuario();
