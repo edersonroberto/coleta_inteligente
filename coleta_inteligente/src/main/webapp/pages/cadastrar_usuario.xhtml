@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<p:messages id="messages" />
+			<p:panelGrid columns="2">
+				<p:outputLabel for="id" value="ID:" />
+				<p:spinner id="id" value="#{UsuarioMB.usuario.id}" />
+
+
+				<p:outputLabel for="nome" value="Nome:" />
+				<p:inputText id="nome" value="#{UsuarioMB.usuario.nome}" />
+
+				<p:outputLabel for="senha" value="Senha:" />
+				<p:inputText id="senha" value="#{UsuarioMB.usuario.senha}" />
+
+				<p:outputLabel for="descricao" value="Descrição:" />
+				<p:inputTextarea id="descricao"
+					value="#{UsuarioMB.usuario.descricao}" />
+
+				<p:commandButton value="Cadastrar" icon="ui-icon-star"
+					action="#{UsuarioMB.cadastraUsuario}" update="messages">
+				</p:commandButton>
+
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
