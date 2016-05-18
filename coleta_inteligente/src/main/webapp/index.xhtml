@@ -11,19 +11,25 @@
 
 	<div id="form">
 		<h:form>
+
 			<p:messages id="messages" />
-			<p:panelGrid columns="2">
-				<p:outputLabel for="nomeUsuario" value="Nome Usuário:" />
-				<p:inputText id="nomeUsuario" value="#{LoginMB.usuario.nomeUsuario}" />
+			<p:panelGrid columns="2" cellpading="5">
+				<p:outputLabel for="nomeUsuario" value="Usuário:" />
+				<p:inputText id="nomeUsuario" value="#{LoginMB.usuario.nomeUsuario}"
+					required="true" />
 
 				<p:outputLabel for="senha" value="Senha:" />
-				<p:password id="senha" value="#{LoginMB.usuario.senha}" />
+				<p:password id="senha" value="#{LoginMB.usuario.senha}"
+					required="true" />
 
-				<p:commandButton value="Login" icon="ui-icon-star"
-					action="#{LoginMB.envia}" ajax="false">
-				</p:commandButton>
-
+				<f:facet name="footer">
+					<p:commandButton value="Login" icon="ui-icon-star"
+						action="#{LoginMB.envia}" ajax="false" style="height: 30px; width: 100px; horizontal-align: center; " >
+					</p:commandButton>
+				</f:facet>
 			</p:panelGrid>
+
+
 		</h:form>
 	</div>
 </h:body>

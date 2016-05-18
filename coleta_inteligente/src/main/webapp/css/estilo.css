@@ -1,7 +1,9 @@
 body {
   background: #fff url(../imagens/coleta.jpg) top no-repeat;
-  margin: 0;
-  padding: 0;
+  margin: 50px;
+  padding: 20px;
+  width:800px;
+  height:600px;
 }
 
 #img {
@@ -12,7 +14,7 @@ body {
 
 #form {
 	position: absolute;
-	left: 50%;
+	left: 40%;
 	top: 50%;
 	margin-lef: -110px;
 	margin-top: -40px;

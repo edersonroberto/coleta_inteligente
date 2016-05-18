@@ -23,12 +23,10 @@
 				<p:outputLabel for="descricao" value="Descrição:" />
 				<p:inputTextarea id="descricao"
 					value="#{UsuarioMB.usuario.descricao}" />
-
-				<p:commandButton value="Cadastrar" icon="ui-icon-star"
+			</p:panelGrid>
+			<p:commandButton value="Cadastrar" icon="ui-icon-star"
 					action="#{UsuarioMB.cadastraUsuario}" update="messages">
 				</p:commandButton>
-
-			</p:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>
