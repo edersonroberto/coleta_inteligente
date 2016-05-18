@@ -15,16 +15,16 @@
 			<p:messages id="messages" />
 			<p:panelGrid columns="2" cellpading="5">
 				<p:outputLabel for="nomeUsuario" value="Usuário:" />
-				<p:inputText id="nomeUsuario" value="#{LoginMB.usuario.nomeUsuario}"
+				<p:inputText id="nomeUsuario" value="#{UsuarioMB.usuario.nomeUsuario}"
 					required="true" />
 
 				<p:outputLabel for="senha" value="Senha:" />
-				<p:password id="senha" value="#{LoginMB.usuario.senha}"
+				<p:password id="senha" value="#{UsuarioMB.usuario.senha}"
 					required="true" />
 
 				<f:facet name="footer">
 					<p:commandButton value="Login" icon="ui-icon-star"
-						action="#{LoginMB.envia}" ajax="false" style="height: 30px; width: 100px; horizontal-align: center; " >
+						action="#{UsuarioMB.logar}" ajax="false" style="height: 30px; width: 100px; horizontal-align: center; " >
 					</p:commandButton>
 				</f:facet>
 			</p:panelGrid>

@@ -4,29 +4,27 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	template="/templates/template.xhtml">
+	
 	<ui:define name="metadata">
 	</ui:define>
 	<ui:define name="content">
 		<h:form>
 			<p:messages id="messages" />
 			<p:panelGrid columns="2">
-				<p:outputLabel for="id" value="ID:" />
-				<p:spinner id="id" value="#{UsuarioMB.usuario.id}" />
-
-
+		
 				<p:outputLabel for="nome" value="Nome:" />
-				<p:inputText id="nome" value="#{UsuarioMB.usuario.nome}" />
+				<p:inputText id="nome" value="#{UsuarioMB.usuario.nomeUsuario}" />
 
 				<p:outputLabel for="senha" value="Senha:" />
 				<p:inputText id="senha" value="#{UsuarioMB.usuario.senha}" />
-
-				<p:outputLabel for="descricao" value="Descrição:" />
-				<p:inputTextarea id="descricao"
-					value="#{UsuarioMB.usuario.descricao}" />
+				
+				<p:outputLabel for="confirmar_senha" value="Senha:" />
+				<p:inputText id="confirmar_senha" value="#{UsuarioMB.usuario.senha}" />
+			
 			</p:panelGrid>
 			<p:commandButton value="Cadastrar" icon="ui-icon-star"
-					action="#{UsuarioMB.cadastraUsuario}" update="messages">
-				</p:commandButton>
+				action="#{UsuarioMB.cadastraUsuario}" update="messages">
+			</p:commandButton>
 		</h:form>
 	</ui:define>
 </ui:composition>

@@ -11,16 +11,25 @@
 	<script
 		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC2DSANgOx3J_TtbxBUNR6wAVG4d4X4uWY"></script>
 	<script>
-		var lat = 51.508742;
-		var longt = -0.120850
+		var lat = -19.96199;
+		var longt = -44.201138;
+		var posicao=new google.maps.LatLng(-19.96199,-44.201138);
+		var marker;
 		function initialize() {
 			var mapProp = {
-				center : new google.maps.LatLng(lat, longt),
+				center : posicao,
 				zoom : 15,
 				mapTypeId : google.maps.MapTypeId.ROADMAP
 			};
 			var map = new google.maps.Map(document.getElementById("googleMap"),
 					mapProp);
+
+			marker = new google.maps.Marker({
+				position : posicao,
+				icon: 'imagens/lixeira_vazia.jpg'
+			});
+
+			marker.setMap(map);
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>

@@ -8,14 +8,14 @@ import javax.faces.context.FacesContext;
 import controlador.UsuarioDAO;
 import modelo.Usuario;
 
-@ManagedBean(name = "LoginMB")
+@ManagedBean(name = "UsuarioMB")
 @ViewScoped
 public class LoginManagedBean {
 	
 	private UsuarioDAO usuarioDAO = new UsuarioDAO();
     private Usuario usuario = new Usuario();
     
-    public String envia() {
+    public String logar() {
           
          usuario = usuarioDAO.getUsuario(usuario.getNomeUsuario(), usuario.getSenha());
           
@@ -29,8 +29,17 @@ public class LoginManagedBean {
           } else {
                 return "/main";
           }
-          
-          
+    }
+    
+    private String cadastrarUsuario(){
+    	
+    	if (usuarioDAO.createUsuario(usuario)){
+    		//sucesso
+    	}else{
+    		//erro
+    	};
+    	
+    	return "";
     }
 
     public Usuario getUsuario() {
