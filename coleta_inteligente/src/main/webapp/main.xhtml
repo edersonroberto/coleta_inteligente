@@ -11,9 +11,7 @@
 	<script
 		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC2DSANgOx3J_TtbxBUNR6wAVG4d4X4uWY"></script>
 	<script>
-		var lat = -19.96199;
-		var longt = -44.201138;
-		var posicao=new google.maps.LatLng(-19.96199,-44.201138);
+		var posicao = new google.maps.LatLng(-19.96199, -44.201138);
 		var marker;
 		function initialize() {
 			var mapProp = {
@@ -26,7 +24,7 @@
 
 			marker = new google.maps.Marker({
 				position : posicao,
-				icon: 'imagens/lixeira_vazia.jpg'
+				icon : 'imagens/lixeira_vazia.jpg'
 			});
 
 			marker.setMap(map);
@@ -45,28 +43,7 @@
 		</p:layoutUnit>
 
 		<p:layoutUnit position="west">
-			<h:form>
-				<p:outputPanel id="menuPanel" layout="block">
-					<p:menu toggleable="true" autoSubmenuDisplay="true"
-						style="width:213px;height:483px;border:none;font-size:small;padding:0px;"
-						ajax="false" type="sliding" backLabel="#{msg['menu.back']}">
-
-						<p:submenu label="Cadastro" icon="ui-icon ui-icon-refresh">
-							<p:menuitem value=" * Usuarios"
-								url="/pages/cadastrar_usuario.xhtml" />
-						</p:submenu>
-
-						<p:submenu label="Mapas" icon="ui-icon ui-icon-refresh">
-							<p:menuitem value="Mapa 1" url="/pages/mapa.xhtml" />
-							<p:menuitem value="Page 2" url="/pages/page2.xhtml" />
-						</p:submenu>
-						<p:submenu label="Lixeiras" icon="ui-icon ui-icon-refresh">
-							<p:menuitem value="Page 3" url="/pages/page3.xhtml" />
-							<p:menuitem value="Page 4" url="/pages/page4.xhtml" />
-						</p:submenu>
-					</p:menu>
-				</p:outputPanel>
-			</h:form>
+			<ui:include src="/templates/menu.xhtml" />
 		</p:layoutUnit>>
 
 			<p:layoutUnit position="center">

@@ -1,5 +1,8 @@
 package managedbeans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -14,6 +17,7 @@ public class LoginManagedBean {
 	
 	private UsuarioDAO usuarioDAO = new UsuarioDAO();
     private Usuario usuario = new Usuario();
+    
     
     public String logar() {
           
@@ -40,6 +44,14 @@ public class LoginManagedBean {
     	};
     	
     	return "";
+    }
+    
+    private List<Usuario> getUsuarios(){
+    	
+    	List<Usuario> usuarios = new ArrayList<Usuario>();
+    	usuarios = usuarioDAO.findAll();
+    	
+    	return usuarios;
     }
 
     public Usuario getUsuario() {
