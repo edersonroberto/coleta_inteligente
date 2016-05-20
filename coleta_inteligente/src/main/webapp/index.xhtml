@@ -1,4 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
@@ -8,29 +9,44 @@
 </h:head>
 
 <h:body>
+	<p:layout fullPage="true" resizeTitle="resize"
+		style="background-color:#FFFFFF;">
 
-	<div id="form">
-		<h:form>
+		<p:layoutUnit position="north" size="68" id="north">
+			<ui:include src="/templates/header.xhtml" />
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="center">
+		<div id="form">
+			<h:form>
 
-			<p:messages id="messages" />
-			<p:panelGrid columns="2" cellpading="5">
-				<p:outputLabel for="nomeUsuario" value="Usuário:" />
-				<p:inputText id="nomeUsuario" value="#{UsuarioMB.usuario.nomeUsuario}"
-					required="true" />
+				<p:messages id="messages" />
+				<p:panelGrid columns="2" cellpading="5">
+					<p:outputLabel for="nomeUsuario" value="Usuário:" />
+					<p:inputText id="nomeUsuario"
+						value="#{UsuarioMB.usuario.nomeUsuario}" required="true" />
 
-				<p:outputLabel for="senha" value="Senha:" />
-				<p:password id="senha" value="#{UsuarioMB.usuario.senha}"
-					required="true" />
+					<p:outputLabel for="senha" value="Senha:" />
+					<p:password id="senha" value="#{UsuarioMB.usuario.senha}"
+						required="true" />
 
-				<f:facet name="footer">
-					<p:commandButton value="Login" icon="ui-icon-star"
-						action="#{UsuarioMB.logar}" ajax="false" style="height: 30px; width: 100px; horizontal-align: center; " >
-					</p:commandButton>
-				</f:facet>
-			</p:panelGrid>
+					<f:facet name="footer">
+						<p:commandButton value="Login" icon="ui-icon-star"
+							action="#{UsuarioMB.logar}" ajax="false"
+							style="height: 30px; width: 100px; horizontal-align: center; ">
+						</p:commandButton>
+					</f:facet>
+				</p:panelGrid>
 
 
-		</h:form>
-	</div>
+			</h:form>
+		</div>
+		
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="south" resizable="true" id="south">
+			<ui:include src="/templates/footer.xhtml" />
+		</p:layoutUnit>
+	</p:layout>
 </h:body>
 </html>
