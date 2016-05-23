@@ -9,13 +9,10 @@
 	</ui:define>
 	<ui:define name="content">
 		<h:form>
-			<p:dataTable var="usuario" value="#{LisatUsuariosMB.usuarios}">
-				<p:column headerText="Id">
-					<h:outputText value="#{usuario.id}" />
-				</p:column>
+			<p:dataTable var="usuario" value="#{usuarioMB.usuarios}">
 
 				<p:column headerText="Nome">
-					<h:outputText value="#{usuario.nomeUsuario}" />
+					<h:outputText value="#{usuario.nome}" />
 				</p:column>
 
 				<p:column headerText="Senha">

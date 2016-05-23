@@ -26,7 +26,7 @@ public class TestaUsuarioDAO {
 		
 		usuario = usuarioDAO.getUsuario("ederson", "123");
 		
-		System.out.println(usuario.getNomeUsuario());
+		System.out.println(usuario.getNome());
 	}
 	
 	public void testaRemoveUsuario(){
@@ -44,7 +44,7 @@ public class TestaUsuarioDAO {
 	@Test
 	public void testaInsereUsuario(){
 		
-		usuario.setNomeUsuario("Teste");
+		usuario.setNome("Teste");
 		usuario.setSenha("testando");
 		usuario.setUltimoAcesso(new Date());
 		
@@ -59,7 +59,7 @@ public class TestaUsuarioDAO {
 		List<Usuario> usuarios = usuarioDAO.findAll();
 		
 		for (Usuario usuario : usuarios) {
-			System.out.println(usuario.getNomeUsuario());
+			System.out.println(usuario.getNome());
 		}
 		
 	}

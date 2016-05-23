@@ -20,13 +20,13 @@ public class Usuario {
 	private long id;
 	
 	@Column(name="nome", nullable=false, unique = true)
-	private String nomeUsuario;
+	private String nome;
 	
 	@Column(name="senha", nullable=false)
 	private String senha;
 	
 	@Column(name="ultimo_acesso")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date ultimoAcesso;
 
 	public long getId() {
@@ -37,12 +37,13 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
+
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getSenha() {

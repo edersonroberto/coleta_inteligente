@@ -1,19 +1,20 @@
 package managedbeans;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import controlador.UsuarioDAO;
 import modelo.Usuario;
+import util.Conversor;
 
-@ManagedBean(name = "ListaUsuariosMB")
+@ManagedBean(name = "usuarioMB")
 @ViewScoped
-public class ListaUsuarios {
+public class UsuarioBean {
 	
 	private UsuarioDAO usuarioDAO = new UsuarioDAO();
 	private Usuario usuario = new Usuario();
@@ -25,6 +26,17 @@ public class ListaUsuarios {
 		usuarios = new ArrayList<Usuario>();
 		usuarios = usuarioDAO.findAll();	
 	}
+	
+	public String cadastrarUsuario() {
+		
+		usuario.setUltimoAcesso(new Date());
+		usuario.setSenha(Conversor.converteStringToMD5(usuario.getSenha()));
+		usuarioDAO.createUsuario(usuario);
+
+		return "";
+	}
+
+	
 	
 	public List<Usuario> getUsuarios() {
 		return usuarios;

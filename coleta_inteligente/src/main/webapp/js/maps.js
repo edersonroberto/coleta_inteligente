@@ -1,5 +1,11 @@
 var map;
+var pos;
 
+function inicializaMapa(lat, lng){
+	//pos = new google.maps.LatLng(-19.96199, -44.201138);
+	//pos = new google.maps.LatLng(lat, lng);
+	
+}
 // funcao que inicaliza o mapa
 function initialize() {
 	var mapProp = {

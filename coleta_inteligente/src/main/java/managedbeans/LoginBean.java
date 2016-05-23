@@ -1,5 +1,7 @@
 package managedbeans;
 
+import java.io.IOException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -7,40 +9,38 @@ import javax.faces.context.FacesContext;
 
 import controlador.UsuarioDAO;
 import modelo.Usuario;
+import util.Conversor;
 
-@ManagedBean(name = "UsuarioMB")
+@ManagedBean
 @ViewScoped
-public class LoginManagedBean {
+public class LoginBean {
 
 	private UsuarioDAO usuarioDAO = new UsuarioDAO();
 	private Usuario usuario = new Usuario();
 
-	public String logar() {
-
-		usuario = usuarioDAO.getUsuario(usuario.getNomeUsuario(), usuario.getSenha());
+	public void logar() {
+		
+		String nome = usuario.getNome();
+		String senha = Conversor.converteStringToMD5(usuario.getSenha());
+		
+		usuario = usuarioDAO.getUsuario(nome, senha);
 
 		if (usuario == null) {
 			usuario = new Usuario();
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário não encontrado!", "Erro no Login!"));
-			return null;
+		
 		} else {
-			return "/main";
+			try {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("main.xhtml");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}	
+	
 		}
 	}
 
-	private String cadastrarUsuario() {
-
-		if (usuarioDAO.createUsuario(usuario)) {
-			// sucesso
-		} else {
-			// erro
-		}
-		;
-
-		return "";
-	}
-
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}

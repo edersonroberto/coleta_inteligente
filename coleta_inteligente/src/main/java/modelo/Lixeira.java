@@ -11,6 +11,8 @@ public class Lixeira {
 	@Column
 	private Long id;
 	@Column
+	private String descricao;
+	@Column
 	private String latitude;
 	@Column
 	private String longitude;
@@ -40,6 +42,12 @@ public class Lixeira {
 	}
 	public void setCapacidade(Double capacidade) {
 		this.capacidade = capacidade;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 }

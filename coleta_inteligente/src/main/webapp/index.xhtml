@@ -22,22 +22,21 @@
 
 				<p:messages id="messages" />
 				<p:panelGrid columns="2" cellpading="5">
-					<p:outputLabel for="nomeUsuario" value="Usuário:" />
-					<p:inputText id="nomeUsuario"
-						value="#{UsuarioMB.usuario.nomeUsuario}" required="true" />
+					<p:outputLabel for="nome" value="Usuário:" />
+					<p:inputText id="nome"
+						value="#{loginBean.usuario.nome}" required="true" />
 
 					<p:outputLabel for="senha" value="Senha:" />
-					<p:password id="senha" value="#{UsuarioMB.usuario.senha}"
+					<p:password id="senha" value="#{loginBean.usuario.senha}"
 						required="true" />
 
 					<f:facet name="footer">
 						<p:commandButton value="Login" icon="ui-icon-star"
-							action="#{UsuarioMB.logar}" ajax="false"
+							action="#{loginBean.logar}" ajax="false"
 							style="height: 30px; width: 100px; horizontal-align: center; ">
 						</p:commandButton>
 					</f:facet>
 				</p:panelGrid>
-
 
 			</h:form>
 		</div>
