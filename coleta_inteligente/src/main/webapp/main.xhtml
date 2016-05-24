@@ -8,9 +8,23 @@
 
 <h:head>
 
+	<h:outputScript name="resources/js/maps.js" target="head" />
+	<h:outputScript library="primefaces" name="jquery/jquery.js"/>
+	
+	<h:outputScript
+		name="http://maps.googleapis.com/maps/api/js?key=AIzaSyC2DSANgOx3J_TtbxBUNR6wAVG4d4X4uWY"
+		target="head"></h:outputScript>
+	<!-- 
+	
+	<h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
 	<script
 		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC2DSANgOx3J_TtbxBUNR6wAVG4d4X4uWY"></script>
+
 	<script src="js/maps.js"></script>
+	
+	biblioteca JQuery 
+	<script src="js/jquery-1.12.4.min.js"></script>
+	-->
 
 </h:head>
 
@@ -27,19 +41,16 @@
 		</p:layoutUnit>
 
 		<p:layoutUnit position="center">
-			<button onclick="addMarker(-19.954444, -44.201138)">Adicionar
-				marcador no mapa</button>
-			<hr />
 			<div id="googleMap" style="width: 100%; height: 100%;"></div>
 		</p:layoutUnit>
 
 		<p:layoutUnit position="east" size="200" resizable="true">
 			<p:dataTable var="lixeira" value="#{lixeiraMB.lixeiras}">
 				<p:column headerText="Descrição">
-					<h:outputText value="#{lixeira.descricao}"/>
+					<h:outputText value="#{lixeira.descricao}" />
 				</p:column>
-			</p:dataTable>		
-			
+			</p:dataTable>
+
 		</p:layoutUnit>
 		<p:layoutUnit position="south" resizable="true" id="south">
 			<ui:include src="/templates/footer.xhtml" />
