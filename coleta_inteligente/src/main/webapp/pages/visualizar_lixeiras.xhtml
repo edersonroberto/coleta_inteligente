@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<p:dataTable var="lixeira" value="#{lixeiraMB.lixeiras}">
+
+				<p:column headerText="Nome">
+					<h:outputText value="#{lixeira.nome}" />
+				</p:column>
+
+				<p:column headerText="Latitude">
+					<h:outputText value="#{lixeira.latitude}" />
+				</p:column>
+
+				<p:column headerText="Longitude">
+					<h:outputText value="#{lixeira.longitude}" />
+				</p:column>
+				
+				<p:column headerText="Capacidade">
+					<h:outputText value="#{lixeira.capacidade}" />
+				</p:column>
+				
+				<p:column headerText="Descrição">
+					<h:outputText value="#{lixeira.descricao}" />
+				</p:column>
+
+			</p:dataTable>
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>

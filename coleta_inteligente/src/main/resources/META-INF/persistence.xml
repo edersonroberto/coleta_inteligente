@@ -6,7 +6,6 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>modelo.Usuario</class>
-		<class>modelo.Mapa</class>
 		<class>modelo.Lixeira</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

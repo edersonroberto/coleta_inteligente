@@ -8,24 +8,29 @@
 	<ui:define name="metadata">
 	</ui:define>
 	<ui:define name="content">
+		<h2>Cadastro de Usuários</h2>
 		<h:form>
 			<p:messages id="messages" />
-			<p:panelGrid columns="2">
+			<fieldset>
+				<legend>Dados</legend>
 
-				<p:outputLabel for="nome" value="Nome:" />
-				<p:inputText id="nome" value="#{usuarioMB.usuario.nome}" />
+				<p:panelGrid styleClass="semBorda" columns="2" cellpadding="5">
 
-				<p:outputLabel for="senha" value="Senha:" />
-				<p:password id="senha" match="confirmar_senha"
-					value="#{usuarioMB.usuario.senha}" />
+					<p:outputLabel for="nome" value="Nome:" />
+					<p:inputText id="nome" value="#{usuarioMB.usuario.nome}" />
 
-				<p:outputLabel for="confirmar_senha" value="Confirmar Senha:" />
-				<p:password id="confirmar_senha" value="#{usuarioMB.usuario.senha}" />
+					<p:outputLabel for="senha" value="Senha:" />
+					<p:password id="senha" match="confirmar_senha"
+						value="#{usuarioMB.usuario.senha}" />
 
-			</p:panelGrid>
-			<p:commandButton value="Cadastrar" icon="ui-icon-star"
-				action="#{usuarioMB.cadastrarUsuario}" update="messages">
-			</p:commandButton>
+					<p:outputLabel for="confirmar_senha" value="Confirmar Senha:" />
+					<p:password id="confirmar_senha" value="#{usuarioMB.usuario.senha}" />
+
+				</p:panelGrid>
+				<p:commandButton value="Cadastrar" icon="ui-icon-star"
+					action="#{usuarioMB.cadastrarUsuario}" update="messages">
+				</p:commandButton>
+			</fieldset>
 		</h:form>
 	</ui:define>
 </ui:composition>

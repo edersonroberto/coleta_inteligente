@@ -2,19 +2,25 @@ package modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="lixeiras")
 public class Lixeira {
 	
 	@Id
-	@Column
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@Column
+	private String nome;
+	@Column
 	private String descricao;
-	@Column
+	@Column(unique=true, nullable=false)
 	private String latitude;
-	@Column
+	@Column(unique=true, nullable=false)
 	private String longitude;
 	@Column
 	private Double capacidade;
@@ -48,6 +54,12 @@ public class Lixeira {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 }

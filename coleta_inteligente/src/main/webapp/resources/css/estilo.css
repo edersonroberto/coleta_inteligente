@@ -20,3 +20,11 @@ body {
 	margin-top: -40px;
 	
 }
+
+.ui-panelgrid{
+	border: none !important;
+}
+
+.semBorda tr, .semBorda td {
+	border: none !important;
+}

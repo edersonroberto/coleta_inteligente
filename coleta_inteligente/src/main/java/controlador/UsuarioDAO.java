@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import entity.Entity;
 import modelo.Usuario;
@@ -28,12 +29,12 @@ public class UsuarioDAO {
 		return usuario;
 	}
 	
-	@SuppressWarnings("unchecked")
+	
 	public List<Usuario> findAll(){
 		
 		List<Usuario> usuarios;
 		try{
-			Query query = em.createQuery("Select u from Usuario u");
+			TypedQuery<Usuario> query = em.createQuery("Select u from Usuario u", Usuario.class);
 			usuarios = query.getResultList();
 		}catch(NoResultException ne){
 			System.out.println(ne.getMessage());
