@@ -55,6 +55,10 @@ public class LixeiraBean implements Serializable{
 		
 	}
 	
+	public String status(){
+		return "Vazia";
+	}
+	
 	private String lixeira2Json(){
 		
 		String lixeirasJson = Conversor.converteObjetoParaJson(lixeiras);
