@@ -1,6 +1,7 @@
 package managedbeans;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -32,6 +33,8 @@ public class LoginBean {
 		
 		} else {
 			try {
+				usuario.setUltimoAcesso(new Date());
+				usuarioDAO.updateUsuario(usuario);
 				FacesContext.getCurrentInstance().getExternalContext().redirect("main.xhtml");
 			} catch (IOException e) {
 				e.printStackTrace();

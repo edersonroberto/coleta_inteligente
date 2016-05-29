@@ -76,6 +76,21 @@ public class UsuarioDAO {
 		return inserido;
 		
 	}
+
+
+	public void updateUsuario(Usuario usuario) {
+		
+		try{
+			em.getTransaction().begin();
+			em.merge(usuario);
+			em.getTransaction().commit();
+		}catch(NoResultException ne){
+			System.out.println(ne.getMessage());
+			em.getTransaction().rollback();
+		}
+		
+		
+	}
 	
 	
 
