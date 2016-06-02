@@ -89,7 +89,21 @@ public class UsuarioDAO {
 			em.getTransaction().rollback();
 		}
 		
-		
+	}
+
+
+	public Usuario getUsuarioById(Long id) {
+		Usuario usuario;
+		try{
+			System.out.println("Id: " + id);
+			Query query = em.createQuery("Select u from Usuario u where u.id =:id");
+			query.setParameter("id", id);
+			usuario = (Usuario) query.getSingleResult();
+		}catch(NoResultException ne){
+			System.out.println(ne.getMessage());
+			usuario = null;
+		}
+		return usuario;
 	}
 	
 	

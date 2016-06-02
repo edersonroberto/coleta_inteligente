@@ -21,11 +21,6 @@ body {
 	
 }
 
-.ui-center, .cabecalho {
-	font-family: "Times New Roman";
-	text-align: center;
-	color: blue;
-}
 
 .ui-panelgrid{
 	border: none !important;

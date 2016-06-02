@@ -12,18 +12,18 @@
 				ajax="false" type="sliding" backLabel="#{msg['menu.back']}">
 				
 				<p:submenu label="Principal" icon="ui-icon ui-icon-refresh">
-					<p:menuitem value=" * Principal" url="/main.xhtml" />
+					<p:menuitem value="  Login" url="/index.xhtml" icon="ui-icon-login" />
+					<p:menuitem value="  Principal" url="/main.xhtml" icon="ui-icon ui-icon-trash"/>
 				</p:submenu>
 				
 				<p:submenu label="Usuarios" icon="ui-icon ui-icon-refresh">
-					<p:menuitem value=" * Cadastrar" url="/pages/cadastrar_usuario.xhtml" />
-					<p:menuitem value=" * Visualizar" url="/pages/visualizar_usuarios.xhtml" />
-					<p:menuitem value=" * Editar" url="/pages/editar_usuarios.xhtml" />
+					<p:menuitem value=" Cadastrar" url="/pages/cadastrar_usuario.xhtml" icon="ui-icon-play"/>
+					<p:menuitem value=" Visualizar" url="/pages/visualizar_usuarios.xhtml" icon="ui-icon-list"/>
 				</p:submenu>
 				
 				<p:submenu label="Lixeiras" icon="ui-icon ui-icon-refresh">
-					<p:menuitem value="Cadastrar" url="/pages/cadastrar_lixeira.xhtml" />
-					<p:menuitem value="Visualizar" url="/pages/visualizar_lixeiras.xhtml" />
+					<p:menuitem value="Cadastrar" url="/pages/cadastrar_lixeira.xhtml" icon="ui-icon-play" />
+					<p:menuitem value="Visualizar" url="/pages/visualizar_lixeiras.xhtml" icon="ui-icon ui-icon-list" />
 				</p:submenu>
 			</p:menu>
 		</p:outputPanel>

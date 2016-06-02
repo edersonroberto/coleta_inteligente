@@ -39,7 +39,7 @@ function createMarker(id, latlng, nome, descLatitude, descLongitude) {
 		map : map,
 		position : latlng,
 		title : nome,
-		icon : "resources/imagens/lixeira_vazia.jpg"
+		icon : "resources/imagens/lixeira_vazia.png"
 	});
 
 	// Evento que dá instrução à API para estar alerta ao click no marcador.
@@ -65,11 +65,11 @@ function createMarker(id, latlng, nome, descLatitude, descLongitude) {
 		
 		if($("#"+id).html() == "Vazia"){
 			$("#"+id).html("Cheia");
-			marker.setIcon("resources/imagens/lixeira_cheia.jpg");
+			marker.setIcon("resources/imagens/lixeira_cheia.png");
 
 		}else{
 			$("#"+id).html("Vazia");
-			marker.setIcon("resources/imagens/lixeira_vazia.jpg");
+			marker.setIcon("resources/imagens/lixeira_vazia.png");
 		}
 		
 

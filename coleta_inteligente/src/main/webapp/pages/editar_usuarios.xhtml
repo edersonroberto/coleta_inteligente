@@ -7,6 +7,29 @@
 	<ui:define name="metadata">
 	</ui:define>
 	<ui:define name="content">
-		This is page 3 
+		<h:form id="teste">
+
+			<fieldset>
+				<legend>Dados do Usuário</legend>
+				<p:panelGrid styleClass="semBorda" columns="2" cellpadding="5"
+					width="50px">
+
+					<h:outputText for="nome" value="Nome:" />
+					<p:inputText id="nome" value="#{editarUsuarioBean.usuario.nome}" />
+
+					<p:outputLabel for="senha" value="Senha:" />
+					<p:password id="senha" match="confirmar_senha"
+						value="#{editarUsuarioBean.usuario.senha}" />
+
+					<p:outputLabel for="confirmar_senha" value="Confirmar Senha:" />
+					<p:password id="confirmar_senha" value="#{editarUsuarioBean.usuario.senha}" />
+
+					<p:commandButton value="Salvar"
+						action="#{usuarioMB.atualizarUsuario}"></p:commandButton>
+
+				</p:panelGrid>
+			</fieldset>
+
+		</h:form>
 	</ui:define>
 </ui:composition>

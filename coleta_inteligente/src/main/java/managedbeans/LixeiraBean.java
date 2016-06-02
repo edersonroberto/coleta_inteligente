@@ -44,14 +44,13 @@ public class LixeiraBean implements Serializable{
 		
 		if(resultado){
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Sucesso!", "Lixeira Cadastrado com Sucesso!"));
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Sucesso!", "Lixeira Cadastrada!"));
 		
 		}else{
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Falha!", "Erro ao tentar Cadastrar Lixeira!"));
 		
 		}
-		
 		
 	}
 	

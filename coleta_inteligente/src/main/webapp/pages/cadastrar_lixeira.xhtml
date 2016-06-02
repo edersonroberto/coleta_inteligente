@@ -18,7 +18,7 @@
 					<input type="text" id="txtEndereco" name="txtEndereco" />
 					<br /><br />
 					<input type="button" id="btnEndereco" name="btnEndereco"
-						value="Mostrar no mapa" />
+						value="Inserir Dados do mapa" />
 				</p:panelGrid>
 			</fieldset>
 
@@ -47,7 +47,7 @@
 
 						<h:outputText for="descricao" value="Descrição:" />
 						<p:inputText id="descricao" value="#{lixeiraMB.lixeira.descricao}"
-							widgetVar="desc" />
+							widgetVar="desc" style="width:120%;" />
 
 						<p:commandButton value="Salvar"
 							action="#{lixeiraMB.cadastrarLixeira}"></p:commandButton>

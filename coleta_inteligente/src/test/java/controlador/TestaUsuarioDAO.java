@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import modelo.Usuario;
@@ -21,6 +22,7 @@ public class TestaUsuarioDAO {
 		usuario = new Usuario();
 	}
 	
+	@Ignore
 	@Test
 	public void testaGetUsuario(){
 		
@@ -29,6 +31,7 @@ public class TestaUsuarioDAO {
 		System.out.println(usuario.getNome());
 	}
 	
+	@Ignore
 	public void testaRemoveUsuario(){
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -40,7 +43,7 @@ public class TestaUsuarioDAO {
 		usuario = usuarioDAO.getUsuario("ederson", "123");
 		
 	}
-	
+	@Ignore
 	@Test
 	public void testaInsereUsuario(){
 		
@@ -61,6 +64,12 @@ public class TestaUsuarioDAO {
 		for (Usuario usuario : usuarios) {
 			System.out.println(usuario.getNome());
 		}
+	}
+
+	@Test
+	public void testaGetUsuarioByName(){
+		usuario = usuarioDAO.getUsuarioById(1L);
 		
+		System.out.println("Nome: " + usuario.getNome());
 	}
 }
